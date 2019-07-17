@@ -9,8 +9,9 @@ public class ART {
 		for(int a=0; a<cCenters.length; a++) {
 			double temp=0;
 			for(int b=0; b<cCenters[0].length; b++) {
-				temp= temp + (cCenters[a][b] + pattern[b]);
+				temp= temp + (cCenters[a][b] * pattern[b]);
 			}
+			//System.out.println(temp);
 			if(winnerValue<temp) {
 				winnerValue=temp;
 				winner=a;
@@ -22,12 +23,12 @@ public class ART {
 	}
 	public static void main(String[] args) {
 		
-		double[][] clusterCenters = {	{0.8, -0.5, 0.9, 0.1},
-										{0.1, -0.3, 0.2, -0.5},
-										{0.7, 0.4, -0.1, 0.3}, 
-										{0.4, 0.2, -0.1, 0.1}};
+		double[][] clusterCenters = {	{0.3, 0.4, 0.5, 0.7},
+										{0.4, 0.6, -0.7, 0.1},
+										{0.5, 0.7, 0.2, 0.3}, 
+										{0.6, 0.6, 0.4, -0.5}};
 		
-		int[][] dataset = {{1, 0, 1, 1}, {0, 1, 0, 1}, {1, 1, 1, 0}, {1, 1, 1, 1}};
+		int[][] dataset = {{1, 0, 1, 1}, {1, 1, 0, 1}, {1, 1, 1, 0}, {0, 0, 1, 1}};
 		
 		
 		for(int i = 0; i < dataset[0].length; i++) {
